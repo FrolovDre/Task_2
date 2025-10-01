@@ -1,5 +1,5 @@
 const TSV_URL='reviews_test.tsv';
-const HF_URL='https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct';
+const HF_URL='https://api-inference.huggingface.co/models/google/flan-t5-base';
 const el=id=>document.getElementById(id);
 const tokenEl=el('token'),pickBtn=el('pick'),sentBtn=el('sent'),nounsBtn=el('nouns');
 const reviewEl=el('review'),sentimentEl=el('sentiment'),nounLevelEl=el('nounLevel');
