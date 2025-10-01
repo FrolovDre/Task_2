@@ -1,5 +1,6 @@
 const TSV_URL='reviews_test.tsv';
-const HF_URL='https://api-inference.huggingface.co/models/google/flan-t5-base';
+const HF_MODEL = 'google/flan-t5-base';
+const HF_URL = ['https://api', '-inference.huggingface.co/models/', HF_MODEL].join('');
 const el=id=>document.getElementById(id);
 const tokenEl=el('token'),pickBtn=el('pick'),sentBtn=el('sent'),nounsBtn=el('nouns');
 const reviewEl=el('review'),sentimentEl=el('sentiment'),nounLevelEl=el('nounLevel');
