@@ -1,6 +1,13 @@
 const TSV_URL='reviews_test.tsv';
-const HF_MODEL = 'google/flan-t5-base';
-const HF_URL = ['https://api', '-inference.huggingface.co/models/', HF_MODEL].join('');
+function cleanUrl(u) {
+  return u
+    // убрать zero-width/soft hyphen
+    .replace(/\u200B|\u200C|\u200D|\uFEFF|\u00AD/g, '')
+    // убрать двойные слэши
+    .replace(/([^:]\/)\/+/g, '$1')
+    .trim();
+}
+const HF_URL = cleanUrl('https://api-inference.huggingface.co/models/google/flan-t5-base');
 const el=id=>document.getElementById(id);
 const tokenEl=el('token'),pickBtn=el('pick'),sentBtn=el('sent'),nounsBtn=el('nouns');
 const reviewEl=el('review'),sentimentEl=el('sentiment'),nounLevelEl=el('nounLevel');
